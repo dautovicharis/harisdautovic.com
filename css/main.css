@@ -199,40 +199,6 @@ main {
     color: var(--color-text-secondary);
 }
 
-/* Hero Section */
-.hero {
-    padding-top: var(--spacing-lg);
-    text-align: center;
-}
-
-.hero h1 {
-    color: var(--color-text);
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 30px var(--color-glow);
-}
-
-.hero p {
-    font-family: var(--font-body);
-    font-size: var(--font-size-xl);
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    max-width: 800px;
-    margin: 0 auto;
-    letter-spacing: 0;
-    opacity: 0.95;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-}
-
 /* Button Styles */
 .button {
     background-color: var(--color-accent);
@@ -868,15 +834,6 @@ main {
     
     .tech-card i {
         font-size: 2rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: var(--spacing-sm);
     }
 
     .container {

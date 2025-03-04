@@ -10,6 +10,7 @@
     --color-accent-hover: #38BDF8;
     --color-border: rgba(148, 163, 184, 0.1);
     --color-glow: rgba(14, 165, 233, 0.15);
+    --color-glow-bright: rgba(14, 165, 233, 0.3);
     
     /* Typography */
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -199,40 +200,6 @@ main {
     color: var(--color-text-secondary);
 }
 
-/* Hero Section */
-.hero {
-    padding-top: var(--spacing-lg);
-    text-align: center;
-}
-
-.hero h1 {
-    color: var(--color-text);
-    font-size: var(--font-size-4xl);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 0 0 30px var(--color-glow);
-}
-
-.hero p {
-    font-family: var(--font-body);
-    font-size: var(--font-size-xl);
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-    max-width: 800px;
-    margin: 0 auto;
-    letter-spacing: 0;
-    opacity: 0.95;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-}
-
 /* Button Styles */
 .button {
     background-color: var(--color-accent);
@@ -350,12 +317,25 @@ main {
     margin-bottom: var(--spacing-xs);
     text-shadow: 0 0 30px var(--color-glow);
     line-height: 1;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 20px var(--color-glow);
+    }
+    50% {
+        text-shadow: 0 0 50px var(--color-glow-bright), 0 0 30px var(--color-accent);
+    }
+    100% {
+        text-shadow: 0 0 20px var(--color-glow);
+    }
 }
 
 .stat-text {
     color: var(--color-text);
     font-size: var(--font-size-lg);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Domains Section */
@@ -697,18 +677,6 @@ main {
     padding: var(--spacing-lg);
 }
 
-.skills h3,
-.issues h3,
-.pull-requests h3 {
-    font-size: 1.25rem;
-    margin: var(--spacing-md) 0 var(--spacing-sm);
-}
-
-.issues ul,
-.pull-requests ul {
-    margin-left: var(--spacing-md);
-}
-
 /* Contact Page */
 .contact-grid {
     display: grid;
@@ -788,8 +756,7 @@ main {
     .stats-grid,
     .domains-grid,
     .services-grid,
-    .projects-preview-grid,
-    .contact-grid {
+    .projects-preview-grid {
         grid-template-columns: 1fr;
     }
 
@@ -870,15 +837,6 @@ main {
         font-size: 2rem;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-
     .container {
         padding: 0 var(--spacing-md);
     }
@@ -908,7 +866,8 @@ section[id] {
     scroll-margin-top: calc(var(--spacing-xl) + var(--spacing-md));
 }
 
-/* Remove all transitions */
+/* Remove transitions but keep animations */
 *, *::before, *::after {
     transition: none !important;
+    animation-duration: inherit;
 }

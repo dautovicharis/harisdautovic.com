@@ -1,0 +1,58 @@
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+/* Add padding to main content to prevent it from hiding under fixed header */
+main {
+    padding-top: calc(var(--spacing-lg) + var(--spacing-sm) + 1rem);
+}
+
+/* Page Header */
+.page-header {
+    background-color: var(--color-bg-card);
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.page-header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* Content Section */
+.content-section {
+    padding-bottom: var(--spacing-xl);
+}
+
+/* Section Headers */
+.section-header {
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    text-shadow: 0 0 15px var(--color-glow);
+    color: var(--color-text);
+    background: linear-gradient(90deg, var(--color-text) 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+    box-shadow: 0 0 5px var(--color-glow);
+    border-radius: 3px;
+}

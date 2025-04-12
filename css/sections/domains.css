@@ -1,0 +1,79 @@
+/* Domains Section */
+.domains {
+    padding-top: var(--spacing-lg);
+}
+
+.domains h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-2xl);
+    position: relative;
+    text-shadow: 0 0 15px var(--color-glow);
+    color: var(--color-text);
+    background: linear-gradient(90deg, var(--color-text) 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.domains h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+    box-shadow: 0 0 5px var(--color-glow);
+    border-radius: 3px;
+}
+
+.domains-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--spacing-md);
+}
+
+.domain-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    position: relative;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+}
+
+.domain-card i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-tertiary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.domain-card div {
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+    text-align: center;
+    transition: color 0.2s ease;
+    max-width: 100px;
+}
+
+.domain-card:hover i {
+    opacity: 0.9;
+}
+
+.domain-card:hover div {
+    color: var(--color-text);
+}

@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (menuToggle && navMenu) {
         // Toggle menu when clicking the menu button
         menuToggle.addEventListener('click', function() {
@@ -31,4 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Prevent button clicks in placeholder cards from triggering card hover effect
+    const placeholderButtons = document.querySelectorAll('.project-card.placeholder .button');
+    placeholderButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Stop event propagation to prevent the card's click event from firing
+            e.stopPropagation();
+        });
+    });
 });
